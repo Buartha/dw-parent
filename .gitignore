@@ -1,0 +1,11 @@
+.*
+!.editorconfig
+!.gitignore
+.idea
+tmp/
+target/
+*.iml
+*git.properties
+spark-warehouse/
+tools/
+tmp/

@@ -1,0 +1,39 @@
+zookeeper.address:
+   - "{{ zookeeper_list }}"
+
+zookeeper.rootpath: /flink_record_rulestat
+
+localcluster.bootstrap.servers:
+   - "47.117.34.236:9092"
+
+# check point interval
+checkpoint.interval: 5000
+checkpoint.timeOut: 600000
+checkpoint.maxConcurrentThread: 1
+checkpoint.exactlyOnce: false
+checkpoint.minPauseMS: 100
+
+ruleStatInputStreamTopic: catalog_main_data
+ruleStatInputStreamTopic.partitions: 1
+ruleStatInputStreamTopic.consumerGroup: consumerGroup2
+
+ruleStatOutputStreamTopic: KT_OUT_1001
+ruleStatOutputStreamTopic.partitions: 1
+ruleStatOutputStreamTopic.consumerGroup: consumerGroup1
+
+# host count and cpu cores
+process.hosts: 1
+process.cores: 1
+
+# kafka property
+auto.offset.reset: earliest
+#fetch.min.bytes: 2048
+#max.poll.records: 10000
+#max.poll.interval.ms: 500
+
+# kafka producer exactly once
+enable.idempotence: true
+max.in.flight.requests.per.connection: 3
+retries: 1
+acks: all
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration packages="org.apache.logging.log4j.core.layout">
+	<appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+		</Console>
+		<RollingFile name="RollingFilePre" fileName="log/spdb-pre.log" filePattern="log/spdb-pre.%d{yyyy-MM-dd}.%i.log" append="true">
+			<!-- PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/ -->
+			<SpdbJsonLayout compact="true"/>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="1048576000"/>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+			</Policies>
+			<DefaultRolloverStrategy max="200"/>
+		</RollingFile>
+		<RollingFile name="RollingFileStat" fileName="log/spdb-stat.log" filePattern="log/spdb-stat.%d{yyyy-MM-dd}.%i.log" append="true">
+			<!-- PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/ -->
+			<SpdbJsonLayout compact="true"/>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="1048576000"/>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+			</Policies>
+			<DefaultRolloverStrategy max="200"/>
+		</RollingFile>
+		<RollingFile name="RollingFileRule" fileName="log/spdb-rule.log" filePattern="log/spdb-rule.%d{yyyy-MM-dd}.%i.log" append="true">
+			<!-- PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/ -->
+			<SpdbJsonLayout compact="true"/>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="1048576000"/>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+			</Policies>
+			<DefaultRolloverStrategy max="200"/>
+		</RollingFile>
+		<RollingFile name="RollingFileAlert" fileName="log/spdb-alert.log" filePattern="log/spdb-rule.%d{yyyy-MM-dd}.%i.log" append="true">
+			<!-- PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/ -->
+			<SpdbJsonLayout compact="true"/>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="1048576000"/>
+				<TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+			</Policies>
+			<DefaultRolloverStrategy max="200"/>
+		</RollingFile>
+		<Routing name="Routing">
+			<Routes pattern="${sys:module}">
+				<Route key="pre" ref="RollingFilePre"/>
+				<Route key="stat" ref="RollingFileStat"/>
+				<Route key="rule" ref="RollingFileRule"/>
+				<Route key="alert" ref="RollingFileAlert"/>
+			</Routes>
+		</Routing>
+		<Async name="SpdbAsync" bufferSize="300000">
+			<AppenderRef ref="Routing"/>
+			<ArrayBlockingQueue/>
+		</Async>
+	</appenders>
+	<loggers>
+		<root level="info">
+			<appender-ref ref="SpdbAsync"/>
+		</root>
+	</loggers>
+</configuration>

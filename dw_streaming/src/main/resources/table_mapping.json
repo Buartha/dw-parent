@@ -1,0 +1,50 @@
+[
+  {
+    "sourceTableName": "catalog_main_data_151d806e9846ed734c1beb8278905ff8",
+    "targetAttribName": "gchjs_biaoduan"
+  },
+  {
+    "sourceAttribName": "catalog_main_data_1de2fa83a3b70c7bf30722e19144ace2",
+    "targetAttribName": "gchjs_zigeyushen"
+  },
+  {
+    "sourceAttribName": "catalog_main_data_1de2fa83a3b70c7bf30722e19144ace2",
+    "targetAttribName": "gchjs_kaibiaojilu"
+  },
+  {
+    "sourceTableName": "catalog_main_data_2c1f1701546b1928b782bf5e5e5a45c0",
+    "targetAttribName": "gchjs_jiaoyiheyan"
+  },
+  {
+    "sourceAttribName": "catalog_main_data_342d696b581170aa44ecf4f00bca8a6d",
+    "targetAttribName": "gchjs_zhaobiaoxiangmu"
+  },
+  {
+    "sourceAttribName": "catalog_main_data_3e7bb961e08f90f85c913bdd7c03d7fe",
+    "targetAttribName": "gchjs_toubiaoyaoqing"
+  },
+  {
+    "sourceTableName": "catalog_main_data_4465b2ec630ae9acde1216daea4cf220",
+    "targetAttribName": "gchjs_zhuanjiabuchou"
+  },
+  {
+    "sourceAttribName": "catalog_main_data_497556c0be8f878b68f414b71dc9b70b",
+    "targetAttribName": "gchjs_jiaoyizhengming"
+  },
+  {
+    "sourceAttribName": "catalog_main_data_4bd1f410d2f4737df2e8da9c885a2e3e",
+    "targetAttribName": "gchjs_zhongbiaogonggao"
+  },
+  {
+    "sourceTableName": "catalog_main_data_4f715276aef91edd7ea840dfe4a6be96",
+    "targetAttribName": "gchjs_toubiaoxianjia"
+  },
+  {
+    "sourceAttribName": "catalog_main_data_6d86c2ff870a5e54ebbf880c9573573b",
+    "targetAttribName": "gchjs_toubiaobaozhengjin"
+  },
+  {
+    "sourceAttribName": "catalog_main_data_6d8931fdc592a1e48201fd96dcb08b0",
+    "targetAttribName": "gchjs_zhuanjiadafen"
+  }
+]
